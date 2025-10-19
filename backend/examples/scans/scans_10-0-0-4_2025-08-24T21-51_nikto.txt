@@ -1,0 +1,9 @@
+- Nikto v2.1.5/2.1.5
++ Target Host: dvwa-1.internal.cloudapp.net
++ Target Port: 80
++ GET /: Cookie security created without the httponly flag
++ GET /: Cookie PHPSESSID created without the httponly flag
++ GET /: The anti-clickjacking X-Frame-Options header is not present.
++ GET /robots.txt: Server leaks inodes via ETags, header found with file /robots.txt, fields: 0x19 0x63d2100e1c7dd 
++ GET //: File/dir '/' in robots.txt returned a non-forbidden or redirect HTTP code (302)
++ GET /robots.txt: "robots.txt" contains 1 entry which should be manually viewed.

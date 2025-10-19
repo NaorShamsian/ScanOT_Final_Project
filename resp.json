@@ -1,0 +1,11 @@
+{
+  "statusCode": 400,
+  "timestamp": "2025-10-05T10:06:39.179Z",
+  "path": "/storage/azure-scanner/scan",
+  "message": "Expected property name or '}' in JSON at position 1",
+  "error": {
+    "message": "Expected property name or '}' in JSON at position 1",
+    "error": "Bad Request",
+    "statusCode": 400
+  }
+}

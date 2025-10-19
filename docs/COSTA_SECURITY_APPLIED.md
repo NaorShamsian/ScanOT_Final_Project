@@ -1,0 +1,3 @@
+- Cookies only (HttpOnly), never store tokens in storage.
+- credentials: 'include' on requests.
+- Refresh tokens every 10 min & on 401.

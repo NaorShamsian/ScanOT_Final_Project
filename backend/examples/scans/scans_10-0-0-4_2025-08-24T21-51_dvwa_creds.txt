@@ -1,0 +1,6 @@
+admin:password
+admin:admin
+admin:123456
+gordonb:abc123
+pablo:letmein
+smithy:password

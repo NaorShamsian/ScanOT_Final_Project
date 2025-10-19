@@ -1,0 +1,3 @@
+{"dvwa_bruteforce": "completed", "results": [
+"[80][http-post-form] host: 10.0.0.4   login: admin   password: admin","[80][http-post-form] host: 10.0.0.4   login: admin   password: 123456","[80][http-post-form] host: 10.0.0.4   login: admin   password: password","[80][http-post-form] host: 10.0.0.4   login: gordonb   password: abc123","[80][http-post-form] host: 10.0.0.4   login: pablo   password: letmein","[80][http-post-form] host: 10.0.0.4   login: smithy   password: password"
+]}

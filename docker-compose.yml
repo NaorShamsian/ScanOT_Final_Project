@@ -1,0 +1,29 @@
+version: '3.8'
+services:
+  redis:
+    image: redis:7-alpine
+    container_name: scanners-redis
+    restart: unless-stopped
+    ports: ["6379:6379"]
+
+  api:
+    build:
+      context: ./backend
+    container_name: scanners-api
+    env_file: ./backend/.env
+    depends_on: [ redis ]
+    ports: ["3003:3003"]
+    environment:
+      REDIS_HOST: redis
+      REDIS_PORT: 6379
+      PORT: 3003
+
+  frontend:
+    build:
+      context: ./frontend
+      dockerfile: ./container/Dockerfile
+      args:
+        VITE_API_URL: /api            # <-- היה http://api:3003
+    container_name: scanners-frontend
+    depends_on: [ api ]
+    ports: ["8080:8080"]

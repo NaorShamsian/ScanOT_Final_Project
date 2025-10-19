@@ -1,0 +1,1 @@
+{"sqlmap_scan": "completed", "dvwa_paths_tested": ["/login.php", "/vulnerabilities/sqli/", "/vulnerabilities/sqli_blind/"]}

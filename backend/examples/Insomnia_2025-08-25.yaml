@@ -1,0 +1,619 @@
+type: collection.insomnia.rest/5.0
+name: scanners-system
+meta:
+  id: wrk_949b93b679ef44249e3fe59757b338c0
+  created: 1756059179954
+  modified: 1756059179954
+  description: ""
+collection:
+  - name: scanner
+    meta:
+      id: fld_1334201b6c9c423d9284eed12ad85ae2
+      created: 1756059209964
+      modified: 1756119162687
+      sortKey: -1756059209964
+      description: ""
+    children:
+      - url: http://20.217.200.191:8080/scan?target=10.0.0.4
+        name: public run scan 4
+        meta:
+          id: req_00018ba3f2a044bab65f4b2fcccbb0f7
+          created: 1756059275317
+          modified: 1756062240730
+          isPrivate: false
+          description: ""
+          sortKey: -1756059275317
+        method: POST
+        headers:
+          - name: User-Agent
+            value: insomnia/11.3.0
+        settings:
+          renderRequestBody: true
+          encodeUrl: true
+          followRedirects: global
+          cookies:
+            send: true
+            store: true
+          rebuildPath: true
+      - url: http://20.217.200.191:8080/targets
+        name: public get hosts
+        meta:
+          id: req_72f14c79c2184549a2cd78291e0318ac
+          created: 1756059397755
+          modified: 1756060981258
+          isPrivate: false
+          description: ""
+          sortKey: -1756013991182.5
+        method: GET
+        headers:
+          - name: User-Agent
+            value: insomnia/11.3.0
+        settings:
+          renderRequestBody: true
+          encodeUrl: true
+          followRedirects: global
+          cookies:
+            send: true
+            store: true
+          rebuildPath: true
+      - url: http://20.217.200.191:8080/health
+        name: public health check
+        meta:
+          id: req_46938bc560824512bc2c95060f5f0e2e
+          created: 1756060248894
+          modified: 1756072582853
+          isPrivate: false
+          description: ""
+          sortKey: -1756060248894
+        method: GET
+        headers:
+          - name: User-Agent
+            value: insomnia/11.3.0
+        settings:
+          renderRequestBody: true
+          encodeUrl: true
+          followRedirects: global
+          cookies:
+            send: true
+            store: true
+          rebuildPath: true
+      - url: http://20.217.200.191:8080/scan?target=10.0.0.4
+        name: public run scan 5
+        meta:
+          id: req_5563a3b2a7a34a029aefd1bf54f47c04
+          created: 1756062234555
+          modified: 1756062234555
+          isPrivate: false
+          description: ""
+          sortKey: -1756036633249.75
+        method: POST
+        headers:
+          - name: User-Agent
+            value: insomnia/11.3.0
+        settings:
+          renderRequestBody: true
+          encodeUrl: true
+          followRedirects: global
+          cookies:
+            send: true
+            store: true
+          rebuildPath: true
+  - name: Reports
+    meta:
+      id: fld_44b40b4d305946ac8b5e1ac735f2e9e7
+      created: 1756119156742
+      modified: 1756119156742
+      sortKey: -1756119156742
+      description: ""
+    children:
+      - url: http://127.0.0.1:3003/storage/reports/10-0-0-4/2025-08-24T21-51/nikto
+        name: Nikto
+        meta:
+          id: req_5fb599ae46d9424c91edbe16ae802479
+          created: 1756119167296
+          modified: 1756119951641
+          isPrivate: false
+          description: ""
+          sortKey: -1756119167296
+        method: GET
+        headers:
+          - name: User-Agent
+            value: insomnia/11.3.0
+        settings:
+          renderRequestBody: true
+          encodeUrl: true
+          followRedirects: global
+          cookies:
+            send: true
+            store: true
+          rebuildPath: true
+      - url: http://127.0.0.1:3003/storage/reports/10-0-0-4/2025-08-24T21-51/nuclei
+        name: Nuclei
+        meta:
+          id: req_eda0cb6d86fa43fc8d106d38a899d4ca
+          created: 1756119203448
+          modified: 1756119357123
+          isPrivate: false
+          description: ""
+          sortKey: -1756089708095
+        method: GET
+        headers:
+          - name: User-Agent
+            value: insomnia/11.3.0
+        settings:
+          renderRequestBody: true
+          encodeUrl: true
+          followRedirects: global
+          cookies:
+            send: true
+            store: true
+          rebuildPath: true
+      - url: http://127.0.0.1:3003/storage/reports/10-0-0-4/2025-08-24T21-51/hydra
+        name: Hydra
+        meta:
+          id: req_6359e39c430d4efdb529593398c8008a
+          created: 1756119215312
+          modified: 1756119369487
+          isPrivate: false
+          description: ""
+          sortKey: -1756074978494.5
+        method: GET
+        headers:
+          - name: User-Agent
+            value: insomnia/11.3.0
+        settings:
+          renderRequestBody: true
+          encodeUrl: true
+          followRedirects: global
+          cookies:
+            send: true
+            store: true
+          rebuildPath: true
+      - url: http://127.0.0.1:3003/storage/reports/10-0-0-4/2025-08-24T21-51/gobuster
+        name: Gobuster
+        meta:
+          id: req_e43382da0e8c4532b0c9848c73b4daa0
+          created: 1756119225897
+          modified: 1756119422592
+          isPrivate: false
+          description: ""
+          sortKey: -1756067613694.25
+        method: GET
+        headers:
+          - name: User-Agent
+            value: insomnia/11.3.0
+        settings:
+          renderRequestBody: true
+          encodeUrl: true
+          followRedirects: global
+          cookies:
+            send: true
+            store: true
+          rebuildPath: true
+      - url: http://127.0.0.1:3003/storage/reports/10-0-0-4/2025-08-24T21-51/sqlmap
+        name: Sqlmap
+        meta:
+          id: req_d9b5275b878b4ce8b1c9f0fdca36453c
+          created: 1756119236696
+          modified: 1756119425904
+          isPrivate: false
+          description: ""
+          sortKey: -1756063931294.125
+        method: GET
+        headers:
+          - name: User-Agent
+            value: insomnia/11.3.0
+        settings:
+          renderRequestBody: true
+          encodeUrl: true
+          followRedirects: global
+          cookies:
+            send: true
+            store: true
+          rebuildPath: true
+      - url: http://127.0.0.1:3003/storage/reports/10-0-0-4/2025-08-24T21-51/credentials
+        name: credentials-report
+        meta:
+          id: req_a84d5a95c5d04a8992dde808104fcdfc
+          created: 1756119259781
+          modified: 1756119467687
+          isPrivate: false
+          description: ""
+          sortKey: -1756062090094.0625
+        method: GET
+        headers:
+          - name: User-Agent
+            value: insomnia/11.3.0
+        settings:
+          renderRequestBody: true
+          encodeUrl: true
+          followRedirects: global
+          cookies:
+            send: true
+            store: true
+          rebuildPath: true
+      - url: http://127.0.0.1:3003/storage/reports/10-0-0-4/2025-08-24T21-51/wordlist
+        name: dictionary-report
+        meta:
+          id: req_55cff002ca92495eb3bf37b1ad07546f
+          created: 1756119321248
+          modified: 1756119450127
+          isPrivate: false
+          description: ""
+          sortKey: -1756061169494.0312
+        method: GET
+        headers:
+          - name: User-Agent
+            value: insomnia/11.3.0
+        settings:
+          renderRequestBody: true
+          encodeUrl: true
+          followRedirects: global
+          cookies:
+            send: true
+            store: true
+          rebuildPath: true
+      - url: http://127.0.0.1:3003/storage/reports/10-0-0-4/2025-08-24T21-51/summary
+        name: common-report
+        meta:
+          id: req_86a2833a41c747e6bee4040760c2f87a
+          created: 1756119340230
+          modified: 1756119476741
+          isPrivate: false
+          description: ""
+          sortKey: -1756060709194.0156
+        method: GET
+        headers:
+          - name: User-Agent
+            value: insomnia/11.3.0
+        settings:
+          renderRequestBody: true
+          encodeUrl: true
+          followRedirects: global
+          cookies:
+            send: true
+            store: true
+          rebuildPath: true
+  - url: http://127.0.0.1:3003/authentication/sign-up
+    name: Sign up
+    meta:
+      id: req_d59f3255b7bb4cbf877c01035d7a479a
+      created: 1755278897242
+      modified: 1755357449944
+      isPrivate: false
+      description: ""
+      sortKey: -1755278897242
+    method: POST
+    body:
+      mimeType: application/json
+      text: |-
+        {
+          "nickname": "kriptio112",
+          "firstName": "kriptio112", 
+          "lastName": "kriptio112",
+          "password": "kriptio112"
+        }
+    headers:
+      - name: Content-Type
+        value: application/json
+      - name: User-Agent
+        value: insomnia/11.3.0
+    scripts:
+      preRequest: ""
+      afterResponse: ""
+    settings:
+      renderRequestBody: true
+      encodeUrl: true
+      followRedirects: global
+      cookies:
+        send: true
+        store: true
+      rebuildPath: true
+  - url: http://127.0.0.1:3003/authentication/sign-in
+    name: Sign in
+    meta:
+      id: req_13861b4d9443439f920879e47f5c5df0
+      created: 1755279253935
+      modified: 1755358449369
+      isPrivate: false
+      description: ""
+      sortKey: -1755011405432.5
+    method: POST
+    body:
+      mimeType: application/json
+      text: |-
+        {
+          "nickname": "kriptio112",
+          "password": "kriptio112"
+        }
+    headers:
+      - name: Content-Type
+        value: application/json
+      - name: User-Agent
+        value: insomnia/11.3.0
+    scripts:
+      preRequest: ""
+      afterResponse: ""
+    settings:
+      renderRequestBody: true
+      encodeUrl: true
+      followRedirects: global
+      cookies:
+        send: true
+        store: true
+      rebuildPath: true
+  - url: http://127.0.0.1:3003/users/all?page=1&limit=3
+    name: Get all users
+    meta:
+      id: req_ab62d63854114448b2d26000b07947ec
+      created: 1755353996121
+      modified: 1755358969929
+      isPrivate: false
+      description: ""
+      sortKey: -1754877659527.75
+    method: GET
+    headers:
+      - name: User-Agent
+        value: insomnia/11.3.0
+    scripts:
+      preRequest: ""
+      afterResponse: ""
+    settings:
+      renderRequestBody: true
+      encodeUrl: true
+      followRedirects: global
+      cookies:
+        send: true
+        store: true
+      rebuildPath: true
+  - url: http://127.0.0.1:3003/users/68a1cbe81b4f4a5a15383eac
+    name: Get user via id
+    meta:
+      id: req_24850273898f46d0a5e586e2417d87ee
+      created: 1755354066073
+      modified: 1755434320537
+      isPrivate: false
+      description: ""
+      sortKey: -1754810786575.375
+    method: GET
+    headers:
+      - name: User-Agent
+        value: insomnia/11.3.0
+    scripts:
+      preRequest: ""
+      afterResponse: ""
+    settings:
+      renderRequestBody: true
+      encodeUrl: true
+      followRedirects: global
+      cookies:
+        send: true
+        store: true
+      rebuildPath: true
+  - url: http://127.0.0.1:3003/users/68a1ccef8df4121ae4e256a2
+    name: Update user
+    meta:
+      id: req_0cf54913eed74a8fb4ef4d7ffc0be7d9
+      created: 1755354446071
+      modified: 1755434284731
+      isPrivate: false
+      description: ""
+      sortKey: -1754777350099.1875
+    method: PATCH
+    body:
+      mimeType: application/json
+      text: |-
+        {
+          "nickname": "kriptio1123"
+        }
+    headers:
+      - name: Content-Type
+        value: application/json
+      - name: User-Agent
+        value: insomnia/11.3.0
+    authentication:
+      type: none
+    scripts:
+      preRequest: ""
+      afterResponse: ""
+    settings:
+      renderRequestBody: true
+      encodeUrl: true
+      followRedirects: global
+      cookies:
+        send: true
+        store: true
+      rebuildPath: true
+  - url: http://127.0.0.1:3003/users/68a1ccef8df4121ae4e256a2
+    name: Delete user
+    meta:
+      id: req_56a3dba47f6c4fc2bbf6101be6b5e1b6
+      created: 1755354458337
+      modified: 1755434291736
+      isPrivate: false
+      description: ""
+      sortKey: -1754760631861.0938
+    method: DELETE
+    parameters:
+      - name: ""
+        value: ""
+        disabled: false
+        id: pair_e186246fe4614038b2943371c59ce85b
+    headers:
+      - name: User-Agent
+        value: insomnia/11.3.0
+      - name: ""
+        value: ""
+    authentication:
+      type: none
+    scripts:
+      preRequest: ""
+      afterResponse: ""
+    settings:
+      renderRequestBody: true
+      encodeUrl: true
+      followRedirects: global
+      cookies:
+        send: true
+        store: true
+      rebuildPath: true
+  - url: http://127.0.0.1:3003/authentication/refresh-tokens
+    name: Refresh tokens
+    meta:
+      id: req_f86151fb53384fe1beb6126555009370
+      created: 1755439603076
+      modified: 1755439662746
+      isPrivate: false
+      description: ""
+      sortKey: -1754944532480.125
+    method: POST
+    headers:
+      - name: User-Agent
+        value: insomnia/11.3.0
+    scripts:
+      preRequest: ""
+      afterResponse: ""
+    settings:
+      renderRequestBody: true
+      encodeUrl: true
+      followRedirects: global
+      cookies:
+        send: true
+        store: true
+      rebuildPath: true
+  - url: http://127.0.0.1:3003/storage/containers
+    name: Get containers
+    meta:
+      id: req_cff3856066364f21acd28753a8bf3831
+      created: 1755878138779
+      modified: 1755980055940
+      isPrivate: false
+      description: ""
+      sortKey: -1755878138779
+    method: GET
+    headers:
+      - name: User-Agent
+        value: insomnia/11.3.0
+    scripts:
+      preRequest: ""
+      afterResponse: ""
+    settings:
+      renderRequestBody: true
+      encodeUrl: true
+      followRedirects: global
+      cookies:
+        send: true
+        store: true
+      rebuildPath: true
+  - url: http://127.0.0.1:3003/storage/scans/blobs
+    name: Get container blobs
+    meta:
+      id: req_a7f57c714cd64d369a994bf4ea805f16
+      created: 1755881495544
+      modified: 1756061329628
+      isPrivate: false
+      description: ""
+      sortKey: -1755578518010.5
+    method: GET
+    headers:
+      - name: User-Agent
+        value: insomnia/11.3.0
+    scripts:
+      preRequest: ""
+      afterResponse: ""
+    settings:
+      renderRequestBody: true
+      encodeUrl: true
+      followRedirects: global
+      cookies:
+        send: true
+        store: true
+      rebuildPath: true
+  - url: http://127.0.0.1:3003/storage/scans/blobs/download?path=scans/10-0-0-4/2025-08-24T21-51/dvwa_creds.txt
+    name: Download report from blob
+    meta:
+      id: req_485a137b7fa54e9b899e97530207ec73
+      created: 1755881875526
+      modified: 1756118756088
+      isPrivate: false
+      description: ""
+      sortKey: -1755428707626.25
+    method: GET
+    headers:
+      - name: User-Agent
+        value: insomnia/11.3.0
+    scripts:
+      preRequest: ""
+      afterResponse: ""
+    settings:
+      renderRequestBody: true
+      encodeUrl: true
+      followRedirects: global
+      cookies:
+        send: true
+        store: true
+      rebuildPath: true
+  - url: http://127.0.0.1:3003/storage/scans/scan-results?target=10-0-0-4&date=2025-08-24T21-51
+    name: Scan results as JSON
+    meta:
+      id: req_78abb337ae2842c196270641270919a0
+      created: 1756052392611
+      modified: 1756118774352
+      isPrivate: false
+      description: ""
+      sortKey: -1755353802434.125
+    method: GET
+    headers:
+      - name: User-Agent
+        value: insomnia/11.3.0
+    scripts:
+      preRequest: ""
+      afterResponse: ""
+    settings:
+      renderRequestBody: true
+      encodeUrl: true
+      followRedirects: global
+      cookies:
+        send: true
+        store: true
+      rebuildPath: true
+cookieJar:
+  name: Default Jar
+  meta:
+    id: jar_afe9164537bf49e1b8ab48611067ae6a
+    created: 1755278897167
+    modified: 1755521390980
+  cookies:
+    - id: 08ddea88-7c68-44e7-a522-8fc1066f3e30
+      key: access_token
+      value: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiI2OGExZGQ3YWEyYjhhYTU4ZTExODUxNzEiLCJuaWNrbmFtZSI6ImtyaXB0aW8xMTIiLCJpYXQiOjE3NTU1MjEzOTAsImV4cCI6MTc1NTUyNDk5MCwiYXVkIjoibG9jYWxob3N0OjMwMDMiLCJpc3MiOiJsb2NhbGhvc3Q6MzAwMyJ9.k2OLs09MEj-YO23ZV0LGuR88R6BFTxtqzZEkiMQu1hQ
+      domain: 127.0.0.1
+      path: /
+      secure: true
+      httpOnly: true
+      hostOnly: true
+    - id: 9281de01-35da-42e5-b72c-dc9ec6e5ba48
+      key: refresh_token
+      value: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiI2OGExZGQ3YWEyYjhhYTU4ZTExODUxNzEiLCJyZWZyZXNoVG9rZW5JZCI6ImE3ZmQ3MGY1LTQ5YzYtNDU4ZS05YmZkLWZjZWNiMDM1M2Y2NiIsImlhdCI6MTc1NTUyMTM5MCwiZXhwIjoxNzU1NjA3NzkwLCJhdWQiOiJsb2NhbGhvc3Q6MzAwMyIsImlzcyI6ImxvY2FsaG9zdDozMDAzIn0.COZYCo37PEBxJf0aa8qu0zxK6CDBhLQDvwludoLKm0E
+      domain: 127.0.0.1
+      path: /
+      secure: true
+      httpOnly: true
+      hostOnly: true
+environments:
+  name: Base Environment
+  meta:
+    id: env_c94b44f9291f4452ae588ec5d0e52bd7
+    created: 1755278897165
+    modified: 1755278897165
+    isPrivate: false
+  subEnvironments:
+    - name: scanner-system
+      meta:
+        id: env_24d5465209184f2298a5e1b722bad8a2
+        created: 1756059226543
+        modified: 1756059262494
+        isPrivate: false
+        sortKey: 1756059226543
+      data:
+        scanner-public-ip: 20.217.200.191

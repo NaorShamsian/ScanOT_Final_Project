@@ -1,0 +1,133 @@
+### User Management API Examples
+### Base URL: http://localhost:3003
+
+### 1. User Registration
+POST {{baseUrl}}/authentication/sign-up
+Content-Type: application/json
+
+{
+  "nickname": "john_doe",
+  "firstName": "John",
+  "lastName": "Doe",
+  "password": "securePassword123"
+}
+
+### 2. User Login
+POST {{baseUrl}}/authentication/sign-in
+Content-Type: application/json
+
+{
+  "nickname": "john_doe",
+  "password": "securePassword123"
+}
+
+### 3. Get All Users (Paginated)
+GET {{baseUrl}}/users/all?page=1&limit=10
+
+### 4. Get Single User Profile
+GET {{baseUrl}}/users/{{userId}}
+
+### 5. Update User Profile (Basic Auth Required)
+PATCH {{baseUrl}}/users/{{userId}}
+Content-Type: application/json
+Authorization: Basic {{base64Credentials}}
+
+{
+  "firstName": "Johnny",
+  "lastName": "Smith"
+}
+
+### 6. Update User Password (Basic Auth Required)
+PATCH {{baseUrl}}/users/{{userId}}
+Content-Type: application/json
+Authorization: Basic {{base64Credentials}}
+
+{
+  "password": "newSecurePassword456"
+}
+
+### 7. Delete User Account (Basic Auth Required)
+DELETE {{baseUrl}}/users/{{userId}}
+Authorization: Basic {{base64Credentials}}
+
+### 8. Refresh Access Token
+POST {{baseUrl}}/authentication/refresh-tokens
+# No body needed - uses refresh token from cookies
+
+### 9. User Logout
+POST {{baseUrl}}/authentication/logout
+# No body needed - clears cookies
+
+### 10. Health Check
+GET {{baseUrl}}/health
+
+### 🎯 Azure Scanner API Examples
+
+### 12. Check Azure Scanner Health
+GET {{baseUrl}}/storage/azure-scanner/health
+
+### 13. Start Azure Scanner Scan
+POST {{baseUrl}}/storage/azure-scanner/scan
+Content-Type: application/json
+
+{
+  "target": "10.0.0.4"
+}
+
+### 14. Get Azure Scanner Targets
+GET {{baseUrl}}/storage/azure-scanner/targets
+
+### Storage Scans API Examples
+
+# Get list of all available scans with pagination
+GET http://localhost:3000/storage/scans?page=1&limit=10
+
+# Get list of scans for specific target
+GET http://localhost:3000/storage/scans?target=10.0.0.4&page=1&limit=5
+
+# Get list of scans by date
+GET http://localhost:3000/storage/scans?date=2025-08-24&page=1&limit=10
+
+# Get all scans for specific target
+GET http://localhost:3000/storage/scans/10.0.0.4
+
+# Get specific scan by target and date
+GET http://localhost:3000/storage/scans/10.0.0.4/2025-08-24T21-51
+
+# Get detailed scan information
+GET http://localhost:3000/storage/scans/10.0.0.4/2025-08-24T21-51
+
+# Filter by tool
+GET http://localhost:3000/storage/scans?tool=hydra&page=1&limit=5
+
+# Combined filtering
+GET http://localhost:3000/storage/scans?target=10.0.0.4&date=2025-08-24&tool=nikto&page=1&limit=10
+
+
+### Environment Variables for Testing
+# Set these in your HTTP client environment:
+# baseUrl: http://localhost:3003
+# userId: (get from registration response)
+# base64Credentials: base64 encoded "nickname:password"
+
+### Example: Creating base64 credentials
+# For username "john_doe" and password "securePassword123"
+# Base64 encode: "john_doe:securePassword123"
+# Result: am9obl9kb2U6c2VjdXJlUGFzc3dvcmQxMjM=
+
+### Testing Flow:
+# 1. Register a new user (POST /authentication/sign-up)
+# 2. Login with credentials (POST /authentication/sign-in)
+# 3. Test protected endpoints with Basic Auth
+# 4. Test token refresh
+# 5. Test logout
+# 6. Test Azure Scanner endpoints (health, scan, targets)
+
+### Notes:
+# - Cookies are automatically managed by the server
+# - Use 'credentials: include' in frontend fetch calls
+# - Basic Auth is required for profile updates and deletion
+# - All passwords must be at least 8 characters long
+# - Nicknames must be unique
+# - Azure Scanner endpoints are public (no auth required)
+# - HTTP 202 Accepted is normal for scan endpoint

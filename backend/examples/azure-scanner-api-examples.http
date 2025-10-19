@@ -1,0 +1,124 @@
+### 🎯 Azure Scanner API Examples
+### Base URL: http://localhost:3003
+
+### 1. Check Azure Scanner Health
+GET {{baseUrl}}/storage/azure-scanner/health
+
+### 2. Start Azure Scanner Scan
+POST {{baseUrl}}/storage/azure-scanner/scan
+Content-Type: application/json
+
+{
+  "target": "10.0.0.4"
+}
+
+### 3. Get Azure Scanner Targets
+GET {{baseUrl}}/storage/azure-scanner/targets
+
+### Environment Variables for Testing
+# baseUrl: http://localhost:3003
+
+### Response Examples:
+
+### Health Check Response:
+```json
+{
+  "ok": true
+}
+```
+
+### Scan Response:
+```json
+{
+  "ok": true,
+  "accepted": true,
+  "target": "10.0.0.4"
+}
+```
+
+### Targets Response:
+```json
+{
+  "ok": true,
+  "targets": [
+    "10.0.0.4",
+    "10.0.0.5"
+  ],
+  "warnings": [
+    "Using CIDR: 10.0.0.6/24",
+    "Running fping sweep...",
+    "Running nmap ping sweep...",
+    "Running ARP scan...",
+    "Excluding self IP: 10.0.0.6",
+    "No targets found, adding Azure fallback IPs..."
+  ]
+}
+```
+
+### Testing in PowerShell:
+
+### Health Check:
+```powershell
+Invoke-RestMethod -Uri "http://localhost:3003/storage/azure-scanner/health" -Method GET
+```
+
+### Start Scan:
+```powershell
+Invoke-RestMethod -Uri "http://localhost:3003/storage/azure-scanner/scan" -Method POST -ContentType "application/json" -Body '{"target": "10.0.0.4"}'
+```
+
+### Get Targets:
+```powershell
+Invoke-RestMethod -Uri "http://localhost:3003/storage/azure-scanner/targets" -Method GET
+```
+
+### Testing with cURL:
+
+### Health Check:
+```bash
+curl http://localhost:3003/storage/azure-scanner/health
+```
+
+### Start Scan:
+```bash
+curl -X POST http://localhost:3003/storage/azure-scanner/scan \
+  -H "Content-Type: application/json" \
+  -d '{"target": "10.0.0.4"}'
+```
+
+### Get Targets:
+```bash
+curl http://localhost:3003/storage/azure-scanner/targets
+```
+
+### Important Notes:
+
+1. **HTTP 202 Accepted** - normal response for starting scan
+2. **All endpoints are public** - no authorization required
+3. **Target must be valid IP address**
+4. **Scans are asynchronous** - starting doesn't mean completion
+
+### Testing Order:
+
+1. ✅ Check scanner health (health)
+2. ✅ Get list of available targets (targets)
+3. ✅ Start scan on one of targets (scan)
+4. ✅ Check backend logs for details
+
+### Error Handling:
+
+All endpoints return structured errors:
+```json
+{
+  "ok": false,
+  "error": "ERROR_TYPE",
+  "message": "Error description",
+  "timestamp": "2025-08-25T01:12:56.492Z"
+}
+```
+
+### Error Types:
+- `CONNECTION_ERROR` - cannot connect to Azure Scanner
+- `TIMEOUT_ERROR` - request timeout exceeded
+- `HTTP_ERROR` - HTTP error from Azure Scanner
+- `UNKNOWN_ERROR` - unknown error

@@ -1,0 +1,15 @@
+admin
+login
+logout
+setup
+security
+vulnerabilities
+exec
+source
+include
+upload
+download
+backup
+config
+database
+php
